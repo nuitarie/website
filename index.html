@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="fonts.css">
     <!-- bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <!-- style -->
     <link rel="stylesheet" href="site.css">
   </head>
@@ -38,7 +41,8 @@
           <div>
             <a class="nav" href="#home">ACCUEIL</a>
             <a class="nav" href="#portfolio">PORTFOLIO</a>
-            <a class="nav nav_last" href="#contact">CONTACT</a>
+            <a class="nav" href="#contact">CONTACT</a>
+            <a class="nav nav_last" href="" data-toggle="modal" data-target="#cours-modal">COURS DE CHANT</a>
           </div>
         </nav>
       </div>
@@ -178,6 +182,66 @@
             </div>
             <div class="rosace" style="transform: rotate(180deg) translateZ(0px); clear: both;">
                 <img src="images/rosace.svg" alt="Rosace">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="container">
+      <div class="modal fade" id="cours-modal" tabindex="-1" role="dialog" aria-labelledby="coursModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="coursModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3>
+	        Cours de chant
+		<br>
+		Technique et coaching vocal en musiques actuelles
+	      </h3>
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-md-8 nopadding"><img src="images/modal4.jpg"></div>
+	          <div class="col-md-4 nopadding">
+	            <div class="short-div nopadding"><img src="images/modal2.jpg"></div>
+	            <div class="short-div nopadding"><img src="images/modal3.jpg"></div>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-md-4 nopadding"><img src="images/modal1.jpg"></div>
+	          <div class="col-md-8 padding30">
+	            <h5>Épanouissez votre chant !</h5>
+		    <p>
+                    Je vous propose des cours de chant et de technique vocale, où je
+                    privilégie la motivation et le plaisir, donc la pratique de chansons
+                    choisies par les élèves ou que je propose pour fournir un support
+                    actuel et dynamique. À partir de ce terreau adapté à chacun, on
+                    construit ensemble une pratique rigoureuse et permettant de
+                    s’épanouir et de se développer.<br>
+                    Diplômée d’un Master des Métiers de l’Enseignement, j’ai suivi les
+                    cours du Studio des Variétés à Paris. Je préside le groupe vocal
+                    <a href="http://negitachi.fr" target="_blank">Negitachi</a>, chœur de
+		    référence pour le répertoire geek en région parisienne. J’interviens
+		    également dans <a href="http://www.ecoledemusiqueallegria.eu/" target="_blank">
+		    l’école de musique Allegria</a> (Pascale Tachot) à
+		    Neuilly-sur-Seine.
+		    </p>
+		    <p>
+                    Tarif : 50€ de l’heure (CESU accepté).<br>
+                    Les cours peuvent également être collectifs (jusqu’à 3 élèves), et les
+                    tarifs s’adaptent. Des forfaits sont également possibles.<br>
+                    Contactez-moi pour en savoir plus !<br>
+                    <a href="mailto:contact@nuitarie.eu">contact@nuitarie.eu</a>
+		    </p>
+	          </div>
+	        </div>
+	      </div>
             </div>
           </div>
         </div>
