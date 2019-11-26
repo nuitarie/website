@@ -63,23 +63,24 @@ body {
   font-weight: normal;
   font-stretch: normal;
   font-size: 25px;
-  font-family: pacifica-w00-condensed,fantasy;
+  font-family: 'Vollkorn', serif;
   position: absolute;
-  left: 17px;
+  left: 37px;
   top: 22px;
 }
 
-header div.circle {
-  border:2px solid rgba(255, 255, 255, 1);
+header div.logo {
+  background-image: url(images/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   background-color:transparent;
   position:absolute;
-  top:0;
+  top:-15px;
   right:0;
   bottom:0;
   left:0;
-  border-radius:50%;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 
 nav {
@@ -166,7 +167,7 @@ a.nav_last {
   font-weight: normal;
   font-stretch: normal;
   font-size: 70px;
-  font-family: pacifica-w00-condensed,fantasy;
+  font-family: 'Vollkorn', serif;
   
   margin: 0px;
   line-height: 1.1em;
@@ -190,9 +191,9 @@ a.nav_last {
   font-variant-numeric: normal;
   font-weight: normal;
   font-stretch: normal;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.1em;
-  font-family:droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
+  font-family:GlacialIndifference-Regular;
 
   margin-top: 0px;
   text-align:center;
@@ -224,19 +225,19 @@ a.nav_last {
   line-height: 1.3em;
   padding-top: 50px;
   margin-bottom: 50px;
-  font-family:droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
+  font-family:GlacialIndifference-Regular;
 }
 
 #body p {
   text-align:justify;
-  font-family: droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;
+  font-family: GlacialIndifference-Regular;
   font-style: normal;
   font-variant-ligatures: normal;
   font-variant-caps: normal;
   font-variant-numeric: normal;
   font-weight: normal;
   font-stretch: normal;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.3em;
 }
 
@@ -244,7 +245,7 @@ div.page h2 {
   text-align: center;
   font-size: 37px;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
-  font-family: pacifica-w00-condensed,fantasy;
+  font-family: 'Vollkorn', serif;
   font-style: normal;
   font-variant-ligatures: normal;
   font-variant-caps: normal;

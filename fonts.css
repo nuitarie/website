@@ -13,3 +13,12 @@
   src: url("fonts/05b176f5-c622-4c35-af98-c0c056dd5b66.woff") format("woff");
 }
 
+@font-face {
+  font-family: "ReklameScriptW00-Medium";
+  src: url("fonts/05b176f5-c622-4c35-af98-c0c056dd5b66.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GlacialIndifference-Regular"
+  src: url("fonts/GlacialIndifference-Regular.otf") format("truetype");
+}
