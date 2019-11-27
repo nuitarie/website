@@ -40,7 +40,8 @@
           <div>
             <a class="nav" href="#home">ACCUEIL</a>
             <a class="nav" href="#portfolio">PORTFOLIO</a>
-            <a class="nav nav_last" href="#contact">CONTACT</a>
+            <a class="nav" href="#contact">CONTACT</a>
+            <a class="nav nav_last" href="" data-toggle="modal" data-target="#cv-modal">CV</a>
             <!--<a class="nav nav" href="#contact">CONTACT</a>-->
             <!--<a class="nav nav_last" href="" data-toggle="modal" data-target="#cours-modal">COURS DE CHANT</a>-->
           </div>
@@ -219,6 +220,27 @@
     </div>
 
     <!-- Modal -->
+    <div class="container">
+      <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cvModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3>CV</h3>
+              <div class="container">
+                <iframe src="cv.pdf" width="100%" height="480" frameborder="1"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="modal fade" id="cours-modal" tabindex="-1" role="dialog" aria-labelledby="coursModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
