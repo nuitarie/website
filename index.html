@@ -2,6 +2,20 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Nuitarie - Autrice-compositrice-interprète, coach vocal et cheffe de chœur. Découvrez ma musique sur Spotify, Apple Music, et réservez vos cours de chant.">
+    <meta name="keywords" content="Nuitarie, musique, chant, coach vocal, compositrice, cours de chant, technique vocale">
+    <meta name="author" content="Nuitarie">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nuitarie - Autrice, compositrice, interprète, coach vocal">
+    <meta property="og:description" content="Découvrez l'univers musical de Nuitarie - compositions originales, cours de chant et coaching vocal.">
+    <meta property="og:image" content="images/nuitarie.png">
+    <meta property="og:url" content="https://nuitarie.eu">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nuitarie - Autrice, compositrice, interprète">
+    <meta name="twitter:description" content="Découvrez l'univers musical de Nuitarie - compositions originales, cours de chant et coaching vocal.">
+    <meta name="twitter:image" content="images/nuitarie.png">
     <title>Nuitarie - Autrice, compositrice, interprète, coach vocal et cheffe de chœur</title>
     <!-- icon -->
     <link rel="icon" href="images/logo.png" />
@@ -12,221 +26,272 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
     <!-- bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.css" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <!-- style -->
     <link rel="stylesheet" href="site.css">
   </head>
-
   <body>
     <!-- BACKGROUND -->
-    <div id="background"> 
-      <video loop="loop" autoplay preload="auto" muted="">
-        <source src="video.mp4">
+    <div id="background">
+      <video loop="loop" autoplay preload="metadata" muted="" playsinline poster="images/nuitarie.png">
+        <source src="video.mp4" type="video/mp4">
+        <!-- Fallback background for devices that don't support video -->
+        <div class="video-fallback" style="background-image: url('images/nuitarie.png');"></div>
       </video>
       <!-- Overlay to change video color -->
       <div class="overlay"></div>
     </div>
-
     <!-- HEADER -->
-    <header id="header">
+    <header id="header" role="banner">
       <div class="header">
         <!-- title (logo) -->
         <div class="title">
           <!-- Logo -->
           <div class="logo"></div>
         </div>
-
-        <nav>
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav role="navigation" aria-label="Navigation principale" id="nav-menu">
           <div>
-            <a class="nav" href="#home">ACCUEIL</a>
-            <a class="nav" href="#music">MUSIQUE</a>
-            <a class="nav" href="#contact">CONTACT</a>
-            <a class="nav nav_last" href="" data-toggle="modal" data-target="#cv-modal">CV</a>
+            <a class="nav" href="#home" aria-label="Aller à la section Accueil" onclick="closeMenu()">ACCUEIL</a>
+            <a class="nav" href="#music" aria-label="Aller à la section Musique" onclick="closeMenu()">MUSIQUE</a>
+            <a class="nav" href="#contact" aria-label="Aller à la section Contact" onclick="closeMenu()">CONTACT</a>
+            <a class="nav nav_last" href="" data-bs-toggle="modal" data-bs-target="#cv-modal" aria-label="Ouvrir le CV" onclick="closeMenu()">CV</a>
             <!--<a class="nav nav" href="#contact">CONTACT</a>-->
             <!--<a class="nav nav_last" href="" data-toggle="modal" data-target="#cours-modal">COURS DE CHANT</a>-->
           </div>
         </nav>
       </div>
     </header>
-
-    <!-- BODY -->
-    <div id="body">
+    <!-- MAIN CONTENT -->
+    <main id="body" role="main">
       <!--- HOMEPAGE -->
-      <div class="page" id="home">
+      <section class="page" id="home" aria-labelledby="home-title">
         <hr>
-        <h1>
-          <a href="http://www.facebook.com/nuitarie" target="_blank">
-            <img class="social-icon" alt="Facebook Social Icon" src="images/facebook.png">
+        <h1 id="home-title">
+          <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Visiter la page Facebook de Nuitarie">
+            <img class="social-icon" alt="Facebook" src="images/facebook.png">
           </a>
-          <a href="https://soundcloud.com/nuitarie" target="_blank">
-            <img class="social-icon" alt="SoundCloud Social Icon" src="images/soundcloud.png">
+          <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="Écouter sur SoundCloud">
+            <img class="social-icon" alt="SoundCloud" src="images/soundcloud.png">
           </a>
           Nuitarie
-          <a href="https://youtube.com/user/miracleworkerking" target="_blank">
-            <img class="social-icon" alt="YouTube Icon" src="images/youtube.png">
+          <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="Regarder sur YouTube">
+            <img class="social-icon" alt="YouTube" src="images/youtube.png">
           </a>
-          <a href="https://instagram.com/nuitarie" target="_blank">
-            <img class="social-icon" alt="Instagram Icon" src="images/instagram.png">
+          <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Suivre sur Instagram">
+            <img class="social-icon" alt="Instagram" src="images/instagram.png">
           </a>
         </h1>
-        <h3>Autrice-compositrice-interprète, coach vocal et cheffe de chœur</h3>
+        <h2>Autrice-compositrice-interprète, coach vocal et cheffe de chœur</h2>
         <hr>
         <div class="row">
-          <div class="col-md-5">
-            <div title="Avatar réalisé par PirateCashoo" style="padding-top: 40px; padding-left: 40px;">
+          <div class="col-md-5 d-flex align-items-center justify-content-center">
+            <div title="Avatar réalisé par PirateCashoo" class="avatar-container">
               <div class="avatar">
-                <img alt="Nuitarie" src="images/nuitarie.png" height="100%">
+                <img alt="Portrait artistique de Nuitarie - autrice compositrice interprète" src="images/nuitarie.png" height="100%">
               </div>
               <div class="avatar-scotch-left"></div>
               <div class="avatar-scotch-right"></div>
             </div>
           </div>
           <div class="col-md-7">
-            <center><img alt="fr" src="images/fr.png" height="15"></center>
+            <!-- Language Content Wrapper -->
+            <div class="language-content-wrapper">
+              <!-- French Content -->
+              <div class="language-content french-content active" id="french-content">
+                <div class="language-flags">
+                  <img alt="Français" src="images/fr.png" class="flag-icon clickable active" data-lang="fr" onclick="switchLanguage('fr')">
+                  <img alt="English" src="images/en.png" class="flag-icon clickable" data-lang="en" onclick="switchLanguage('en')">
+                </div>
             <p>Je compose des musiques et des chansons, en créant des mélodies et des paysages oniriques, des peintures sonores peuplées d’étranges créatures. Pour écouter mon travail, je vous invite sur Spotify, Deezer, Google Play, Apple Music ou encore Bandcamp… Vous pouvez également écouter mes expérimentations et travaux en cours sur Soundcloud.</p>
-            <p><center><a href="#music"  class="soundcloud-button">Découvrez ma musique</a></center></p>
+            <p class="text-center"><a href="#music" class="soundcloud-button">Découvrez ma musique</a></p>
             <p>Je propose des cours de chant et de technique vocale pour vous faire chanter, vibrer et grandir. Posez votre respiration et (re)découvrez votre voix, dans un travail respectueux, sans violence. Vous choisissez vos chansons (ou je vous en propose) et nous explorons ensemble les possibilités de votre voix, dans le bien-être et le plaisir. Tarif : 40€/heure. Possibilité de forfaits. Vous pouvez également me trouver sur des sites comme <a href="https://www.superprof.fr/professeure-chant-huningue-donne-cours-chant-musique-specialite-musiques-actuelles.html">Superprof</a> et <a href="https://www.apprentus.fr/cours-particuliers/huningue/art-musique/solfege/singing-lessons-modern-music-vocal-coachin">Apprentus</a>.</p>
             <p>Je propose des stages et ateliers pour les artistes mais aussi pour les entreprises (coaching vocal, teambuilding). Pour en savoir plus, vous pouvez télécharger la <a href="data/Ateliers pour entreprises.pdf" target="_blank">brochure dédiée</a>.</p>
-
-            <center><img alt="en" src="images/en.png" height="15"></center>
+            </div>
+              <!-- English Content -->
+              <div class="language-content english-content" id="english-content">
+                <div class="language-flags">
+                  <img alt="Français" src="images/fr.png" class="flag-icon clickable" data-lang="fr" onclick="switchLanguage('fr')">
+                  <img alt="English" src="images/en.png" class="flag-icon clickable active" data-lang="en" onclick="switchLanguage('en')">
+                </div>
             <p>I compose music and songs, creating dreamlike landscapes and sound paintings populated by strange creatures. To listen to my work, please head to Spotify, Deezer, Google Play, Apple Music or even Bandcamp… You can also listen to my experiments and works in progress on Soundcloud.</p>
-            <p><center><a href="#music"  class="soundcloud-button">Listen to my music</a></center></p>
+            <p class="text-center"><a href="#music" class="soundcloud-button">Listen to my music</a></p>
             <p>I offer singing and vocal technique lessons to make you sing, feel good and grow. Breathe deeply and (re) discover your voice, in a respectful setting, without any violence. You choose your songs (or I suggest them to you) and together we explore the possibilities of your voice, with well-being and pleasure in mind. Price: 40 € / hour. Possibility of packages. You can also find me on sites like <a href="https://www.superprof.fr/professeure-chant-huningue-donne-cours-chant-musique-specialite-musiques-actuelles.html">Superprof</a> and <a href="https://www.apprentus.fr/cours-particuliers/huningue/art-musique/solfege/singing-lessons-modern-music-vocal-coachin">Apprentus</a>.</p>
-
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
+      </section>
       <!--- MUSIC -->
-      <div class="page" id="music">
-        <h2>MUSIQUE</h2>
+      <section class="page" id="music" aria-labelledby="music-title">
+        <h2 id="music-title">MUSIQUE</h2>
         <div class="row">
           <div class="col-md-6">
-            <h3>EP : Ghost Love Stories</h3>
-            <iframe src="https://open.spotify.com/embed?uri=spotify:album:6PjwZkGaOBeuKfvza1zWz5&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-            <center>
-              Disponible sur toutes les plateformes de streaming:<br>
-              <a href="https://music.apple.com/us/album/ghost-love-stories-ep/1606383341">
-                <img alt="ITunes" src="images/itunes.png" width="50px" height="50px">
-              </a>
-              <a href="https://open.spotify.com/album/6PjwZkGaOBeuKfvza1zWz5">
-                <img alt="Spotify" src="images/spotify.png" width="50px" height="50px">
-              </a>
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-2_HzE8nPIhaH5ZiVjNAEPDaDCGp6jS4">
-                <img alt="YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.deezer.com/fr/album/289490922">
-                <img alt="Deezer" src="images/deezer.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.amazon.com/dp/B09QXGZLHF/">
-                <img alt="Amazon Music" src="images/amazon.png" width="50px" height="50px">
-              </a>
-            </center>
-            <br>
-            <h3>EP : Dans une parure de plumes grises</h3>
-            <iframe src="https://open.spotify.com/embed?uri=spotify:album:5xyY8kfnR0Ol3n7wZlBhJm&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-            <center>
-              Disponible sur toutes les plateformes de streaming:<br>
-              <a href="https://music.apple.com/fr/album/dans-une-parure-de-plumes-grises-ep/1519531914">
-                <img alt="ITunes" src="images/itunes.png" width="50px" height="50px">
-              </a>
-              <a href="https://open.spotify.com/album/5xyY8kfnR0Ol3n7wZlBhJm">
-                <img alt="Spotify" src="images/spotify.png" width="50px" height="50px">
-              </a>
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_mMh3gpKuw8WHR3BP-GJD-ZRCOOg518gKM">
-                <img alt="YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.deezer.com/fr/album/155768242">
-                <img alt="Deezer" src="images/deezer.png" width="50px" height="50px">
-              </a>
-              <a href="https://nuitarie.bandcamp.com/album/dans-une-parure-de-plumes-grises">
-                <img alt="Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.amazon.com/gp/product/B08BJ68B8C/">
-                <img alt="Amazon Music" src="images/amazon.png" width="50px" height="50px">
-              </a>
-            </center>
-            <br>
-            <h3>EP : Pluto 1982</h3>
-            <iframe src="https://open.spotify.com/embed?uri=spotify:album:03zexZdmhijf31yIxVBt80&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-            <center>
-              Disponible sur toutes les plateformes de streaming:<br>
-              <a href="https://music.apple.com/fr/album/pluto-1982-single/1454810119">
-                <img alt="ITunes" src="images/itunes.png" width="50px" height="50px">
-              </a>
-              <a href="https://open.spotify.com/album/03zexZdmhijf31yIxVBt80">
-                <img alt="Spotify" src="images/spotify.png" width="50px" height="50px">
-              </a>
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kVUC7PsSWZQiDYGpmx9gMfLCPaCjgdqcE">
-                <img alt="YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.deezer.com/fr/album/88805322">
-                <img alt="Deezer" src="images/deezer.png" width="50px" height="50px">
-              </a>
-              <a href="https://nuitarie.bandcamp.com/album/pluto-1982">
-                <img alt="Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.amazon.com/Pluto-1982-Nuitarie/dp/B07P6RM67M">
-                <img alt="Amazon Music" src="images/amazon.png" width="50px" height="50px">
-              </a>
-            </center>
-            <br>
-            <h3>EP : Arcaibh - The Lost Island</h3>
-            <iframe src="https://open.spotify.com/embed?uri=spotify:album:7vbRXRZjBaFZHhxzicrio2&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-            <center>
-              Disponible sur toutes les plateformes de streaming:<br>
-              <a href="https://itunes.apple.com/fr/album/arcaibh-the-lost-island-ep/1365507014">
-                <img alt="ITunes" src="images/itunes.png" width="50px" height="50px">
-              </a>
-              <a href="https://open.spotify.com/album/7vbRXRZjBaFZHhxzicrio2">
-                <img alt="Spotify" src="images/spotify.png" width="50px" height="50px">
-              </a>
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_nzJ5J1vmqc4EnRW-qCRx5YOsFp9mQd6Vc">
-                <img alt="YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.deezer.com/fr/album/60096292">
-                <img alt="Deezer" src="images/deezer.png" width="50px" height="50px">
-              </a>
-              <a href="https://nuitarie.bandcamp.com/album/arcaibh-the-lost-island">
-                <img alt="Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
-              </a>
-              <a href="https://www.amazon.fr/Arcaibh-Lost-Island-Nuitarie/dp/B07BSRR1M2">
-                <img alt="Amazon Music" src="images/amazon.png" width="50px" height="50px">
-              </a>
-            </center>
+            <div class="music-album">
+              <h3>EP : Ghost Love Stories</h3>
+              <iframe src="https://open.spotify.com/embed?uri=spotify:album:6PjwZkGaOBeuKfvza1zWz5&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class="streaming-platforms text-center">
+                Disponible sur toutes les plateformes de streaming:<br>
+                <a href="https://music.apple.com/us/album/ghost-love-stories-ep/1606383341">
+                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
+                </a>
+                <a href="https://open.spotify.com/album/6PjwZkGaOBeuKfvza1zWz5">
+                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
+                </a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-2_HzE8nPIhaH5ZiVjNAEPDaDCGp6jS4">
+                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.deezer.com/fr/album/289490922">
+                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.amazon.com/dp/B09QXGZLHF/">
+                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
+                </a>
+              </div>
+            </div>
+            <div class="music-album">
+              <h3>EP : Dans une parure de plumes grises</h3>
+              <iframe src="https://open.spotify.com/embed?uri=spotify:album:5xyY8kfnR0Ol3n7wZlBhJm&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class="streaming-platforms text-center">
+                Disponible sur toutes les plateformes de streaming:<br>
+                <a href="https://music.apple.com/fr/album/dans-une-parure-de-plumes-grises-ep/1519531914">
+                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
+                </a>
+                <a href="https://open.spotify.com/album/5xyY8kfnR0Ol3n7wZlBhJm">
+                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
+                </a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_mMh3gpKuw8WHR3BP-GJD-ZRCOOg518gKM">
+                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.deezer.com/fr/album/155768242">
+                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
+                </a>
+                <a href="https://nuitarie.bandcamp.com/album/dans-une-parure-de-plumes-grises">
+                  <img alt="Écouter sur Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.amazon.com/gp/product/B08BJ68B8C/">
+                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
+                </a>
+              </div>
+            </div>
+            <div class="music-album">
+              <h3>EP : Pluto 1982</h3>
+              <iframe src="https://open.spotify.com/embed?uri=spotify:album:03zexZdmhijf31yIxVBt80&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class="streaming-platforms text-center">
+                Disponible sur toutes les plateformes de streaming:<br>
+                <a href="https://music.apple.com/fr/album/pluto-1982-single/1454810119">
+                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
+                </a>
+                <a href="https://open.spotify.com/album/03zexZdmhijf31yIxVBt80">
+                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
+                </a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_kVUC7PsSWZQiDYGpmx9gMfLCPaCjgdqcE">
+                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.deezer.com/fr/album/88805322">
+                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
+                </a>
+                <a href="https://nuitarie.bandcamp.com/album/pluto-1982">
+                  <img alt="Écouter sur Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.amazon.com/Pluto-1982-Nuitarie/dp/B07P6RM67M">
+                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
+                </a>
+              </div>
+            </div>
+            <div class="music-album">
+              <h3>EP : Arcaibh - The Lost Island</h3>
+              <iframe src="https://open.spotify.com/embed?uri=spotify:album:7vbRXRZjBaFZHhxzicrio2&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class="streaming-platforms text-center">
+                Disponible sur toutes les plateformes de streaming:<br>
+                <a href="https://itunes.apple.com/fr/album/arcaibh-the-lost-island-ep/1365507014">
+                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
+                </a>
+                <a href="https://open.spotify.com/album/7vbRXRZjBaFZHhxzicrio2">
+                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
+                </a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_nzJ5J1vmqc4EnRW-qCRx5YOsFp9mQd6Vc">
+                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.deezer.com/fr/album/60096292">
+                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
+                </a>
+                <a href="https://nuitarie.bandcamp.com/album/arcaibh-the-lost-island">
+                  <img alt="Écouter sur Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
+                </a>
+                <a href="https://www.amazon.fr/Arcaibh-Lost-Island-Nuitarie/dp/B07BSRR1M2">
+                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
+                </a>
+              </div>
+            </div>
           </div>
           <div class="col-md-6">
-            <h3>Collection "Crown of Thorns"</h3>
-            <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929180185&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            <h3>Collection Covers</h3>
-            <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/576955974&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <div class="soundcloud-collection">
+              <h3>Collection "Crown of Thorns"</h3>
+              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929180185&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
+            <div class="soundcloud-collection">
+              <h3>Collection Covers</h3>
+              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/576955974&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
             <a href="https://soundcloud.com/nuitarie" target="_blank" class="soundcloud-button">Visitez mon Soundcloud !</a>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 covers">
-            <h3>Nouveau single</h3>
-            <div>
-              <iframe class="youtube" src="https://www.youtube.com/embed/WJJx7d6R7pM" allowfullscreen=""></iframe>
+            <h3>Clips vidéo et performances</h3>
+            <p class="text-center video-description">Découvrez l'univers visuel de Nuitarie à travers ses clips et performances live</p>
+            <!-- Featured Video - Full Width -->
+            <div class="video-container featured-video">
+              <iframe class="youtube featured" src="https://www.youtube-nocookie.com/embed/MidhKqrWSqc?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Pompeii (Bastille Cover)"></iframe>
+              <p class="video-caption">"Pompeii" - Reprise du célèbre titre de Bastille, réinterprété avec la sensibilité et l'approche vocale unique de Nuitarie</p>
             </div>
-            <div>
-              <iframe class="youtube" src="https://www.youtube.com/embed/46P4UlsvsJ0" allowfullscreen=""></iframe>
+            <!-- Three Videos in Row for Desktop -->
+            <div class="row video-row">
+              <div class="col-md-4">
+                <div class="video-container compact">
+                  <iframe class="youtube compact" src="https://www.youtube-nocookie.com/embed/8-jeecoXGds?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Jenny Of Oldstones (Game of Thrones Cover)"></iframe>
+                  <p class="video-caption">"Jenny Of Oldstones" - Reprise émouvante de Game of Thrones, accompagnée à la harpe celtique dans un style intimiste</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="video-container compact">
+                  <iframe class="youtube compact" src="https://www.youtube-nocookie.com/embed/WJJx7d6R7pM?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Shéhérazade (Composition Originale)"></iframe>
+                  <p class="video-caption">"Shéhérazade" - Composition originale de Nuitarie, évoquant les contes des Mille et Une Nuits avec finesse et poésie</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="video-container compact">
+                  <iframe class="youtube compact" src="https://www.youtube-nocookie.com/embed/zpY64xyAiek?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Sweet Relief (Madison Beer Cover)"></iframe>
+                  <p class="video-caption">"Sweet Relief" - Reprise du titre de Madison Beer, démontrant la versatilité vocale et l'interprétation moderne de Nuitarie</p>
+                </div>
+              </div>
+            </div>
+            <!-- YouTube Channel Link -->
+            <div class="text-center" style="margin-top: 40px;">
+              <a href="https://youtube.com/user/miracleworkerking" target="_blank" class="youtube-channel-button">
+                <img src="images/youtube.png" alt="YouTube" width="24" height="24" style="margin-right: 10px; vertical-align: middle;">
+                Visitez ma chaîne YouTube
+              </a>
             </div>
           </div>
         </div>
-      </div>
-
+      </section>
       <!--- CONTACT -->
-      <div class="page" id="contact">
-        <h2>CONTACT</h2>
-        <div class="row">
-          <div class="col-md-6">
+      <section class="page" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">CONTACT</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex justify-content-center">
             <div class="contact-photos-frame">
               <div class="contact-photo">
-                <img alt="Photo" src="images/photo.jpg">
+                <img alt="Photo professionnelle de Nuitarie" src="images/photo.jpg">
               </div>
               <div class="contact-photos-scotch"></div>
             </div>
@@ -239,33 +304,33 @@
               <form method="post" action="https://formspree.io/contact@nuitarie.eu">
                 <ul>
                   <li>
-                    <label>Nom</label>
-                    <input type="text" name="Nom" placeholder="Nom">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="Nom" placeholder="Nom">
                   </li>
                   <li>
-                    <label>E-mail</label>
-                    <input type="text" name="E-mail" placeholder="E-mail">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="E-mail" placeholder="E-mail">
                   </li>
                   <li>
-                    <label>Numéro de téléphone</label>
-                    <input type="tel" name="Numéro de téléphone" placeholder="Numéro de téléphone" >
+                    <label for="telephone">Numéro de téléphone</label>
+                    <input type="tel" id="telephone" name="Numéro de téléphone" placeholder="Numéro de téléphone">
                   </li>
                   <li>
-                    <label>Adresse</label>
-                    <input type="text" name="Adresse" placeholder="Adresse">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" id="adresse" name="Adresse" placeholder="Adresse">
                   </li>
                   <li>
-                    <label>Objet</label>
-                    <input type="text" name="Objet" placeholder="Objet">
+                    <label for="objet">Objet</label>
+                    <input type="text" id="objet" name="Objet" placeholder="Objet">
                   </li>
                   <li>
-                    <label>Message</label>
-                    <textarea name="Message" placeholder="Message"></textarea>
-                  </li>
-                  <li>
-                    <input type="submit" value="Envoyer">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" placeholder="Message"></textarea>
                   </li>
                 </ul>
+                <div class="submit-button">
+                  <input type="submit" value="Envoyer">
+                </div>
               </form>
             </div>
             <div class="rosace" style="transform: rotate(180deg) translateZ(0px); clear: both;">
@@ -273,9 +338,43 @@
             </div>
           </div>
         </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Nuitarie</h4>
+            <p>Autrice-compositrice-interprète, coach vocal et cheffe de chœur</p>
+          </div>
+          <div class="col-md-4">
+            <h4>Contact</h4>
+            <p>contact@nuitarie.eu</p>
+          </div>
+          <div class="col-md-4">
+            <h4>Suivez-moi</h4>
+            <div class="footer-social">
+              <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Facebook">
+                <img alt="Facebook" src="images/facebook.png" width="32" height="32">
+              </a>
+              <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="SoundCloud">
+                <img alt="SoundCloud" src="images/soundcloud.png" width="32" height="32">
+              </a>
+              <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="YouTube">
+                <img alt="YouTube" src="images/youtube.png" width="32" height="32">
+              </a>
+              <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Instagram">
+                <img alt="Instagram" src="images/instagram.png" width="32" height="32">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Nuitarie. Tous droits réservés.</p>
+        </div>
       </div>
-    </div>
-
+    </footer>
     <!-- Modal -->
     <div class="container">
       <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="cvModalLabel" aria-hidden="true">
@@ -283,9 +382,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="cvModalLabel"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <h3>CV</h3>
@@ -297,16 +394,13 @@
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="modal fade" id="cours-modal" tabindex="-1" role="dialog" aria-labelledby="coursModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="coursModalLabel"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <h3>
@@ -356,5 +450,63 @@
         </div>
       </div>
     </div>
+    <script>
+      function switchLanguage(lang) {
+        // Update all flags to reflect current selection
+        document.querySelectorAll('.flag-icon.clickable').forEach(flag => {
+          if (flag.getAttribute('data-lang') === lang) {
+            flag.classList.add('active');
+          } else {
+            flag.classList.remove('active');
+          }
+        });
+        // Get current active content
+        const currentContent = document.querySelector('.language-content.active');
+        const targetContent = document.getElementById(lang === 'fr' ? 'french-content' : 'english-content');
+        if (currentContent && currentContent !== targetContent) {
+          // Fade out current text content
+          currentContent.style.opacity = '0';
+          setTimeout(() => {
+            // Switch content
+            currentContent.classList.remove('active');
+            targetContent.classList.add('active');
+            // Fade in new text content
+            setTimeout(() => {
+              targetContent.style.opacity = '1';
+            }, 50);
+          }, 150);
+        } else if (!currentContent) {
+          // First load
+          targetContent.classList.add('active');
+        }
+      }
+      // Hamburger menu functions
+      function toggleMenu() {
+        const nav = document.getElementById('nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        nav.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      }
+      function closeMenu() {
+        const nav = document.getElementById('nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const nav = document.getElementById('nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+          closeMenu();
+        }
+      });
+      // Close menu on escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
+      });
+    </script>
   </body>
 </html>
