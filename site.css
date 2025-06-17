@@ -7,7 +7,6 @@ body {
   color: white;
   background-color: #0d243d;
   overflow-x: hidden;
-  scroll-padding-top: 110px;
 }
 #background {
   position: fixed;
@@ -59,6 +58,16 @@ body {
 @media (max-width: 768px) {
   #header div.title {
     left: 20px;
+  }
+  header div.logo {
+    width: 50px;
+    height: 50px;
+    top: 5px;
+  }
+  .hamburger {
+    z-index: 10001;
+    right: 20px;
+    top: 25px;
   }
 }
 #header h2 {
@@ -126,43 +135,72 @@ nav {
   nav {
     position: fixed;
     top: 90px;
-    left: -100%;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: 0;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
-    transition: left 0.3s ease;
+    transition: height 0.3s ease;
     z-index: 9998;
+    overflow: hidden;
   }
   nav.active {
-    left: 0;
+    height: calc(100vh - 90px);
   }
   nav > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 50px;
-    height: 100%;
-    left: 0;
+    justify-content: center;
+    height: calc(100vh - 90px);
+    width: 100%;
+    padding: 0;
   }
   a.nav {
-    font-size: 18px;
-    padding: 15px 30px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    width: 80%;
+    color: white;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background: transparent;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: none;
     text-align: center;
-    margin: 5px 0;
-    border-radius: 8px;
-    background: rgba(2, 176, 173, 0.1);
+    margin: 0;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   a.nav:hover {
-    background: rgba(164, 243, 246, 0.2);
-    transform: translateY(0);
+    color: #A4F3F6;
+    background: transparent;
+    border: none;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(164, 243, 246, 0.5);
+    box-shadow: none;
+  }
+  a.nav::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #A4F3F6, #02B0AD);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  a.nav:hover::before {
+    width: 80%;
   }
   a.nav_last {
-    border-bottom: none;
+    border: none;
   }
 }
 nav>div {
@@ -351,12 +389,12 @@ a.nav_last {
 /* Section titles with enhanced visibility */
 div.page h2 {
   text-align: center;
-  font-size: 64px;
+  font-size: 76px;
   font-family: 'Vollkorn', serif;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 80px auto 90px auto;
-  padding: 50px 60px;
+  margin: 40px auto 90px auto;
+  padding: 60px 70px;
   position: relative;
   color: #FFFFFF;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
@@ -385,15 +423,38 @@ div.page h2::before {
   z-index: -1;
   opacity: 0.6;
 }
-/* Section-based layout with reduced padding */
+/* Section-based layout with proper spacing */
 div.page {
   min-height: 100vh;
-  padding-top: 110px;
-  padding-bottom: 40px;
+  padding-top: 150px;
+  padding-bottom: 120px;
+  margin-bottom: 80px;
   position: relative;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.8s ease-out forwards;
+  scroll-margin-top: 120px;
+}
+
+/* Specific scroll offset for anchor sections */
+#home {
+  scroll-margin-top: 140px !important;
+  margin-bottom: 100px;
+  padding-top: 110px !important;
+}
+/* Hide the first HR in home section (above title) */
+#home hr:first-child {
+  display: none;
+}
+#music, #contact {
+  scroll-margin-top: 120px !important;
+  margin-bottom: 100px;
+}
+#music {
+  margin-top: 100px;
+}
+#contact {
+  margin-top: 100px;
 }
 /* Section backgrounds for better contrast */
 div.page::before {
@@ -410,6 +471,25 @@ div.page::before {
   border-radius: 20px;
   z-index: -1;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Visual separators between sections */
+div.page:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(164, 243, 246, 0.3) 15%,
+    rgba(2, 176, 173, 0.8) 50%,
+    rgba(164, 243, 246, 0.3) 85%,
+    transparent 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(2, 176, 173, 0.6);
 }
 /* Animation keyframes */
 @keyframes fadeInUp {
@@ -919,13 +999,13 @@ iframe.soundcloud {
 }
 /* Enhanced CV modal styling */
 #cv-modal {
-  top: 50px;
+  top: 0px !important;
 }
 #cv-modal .modal-dialog {
   width: 1200px;
   max-width: 98vw;
-  margin: 10px auto;
-  max-height: 95vh;
+  margin: 100px auto 10px auto !important;
+  max-height: calc(95vh - 90px);
 }
 #cv-modal .modal-content {
   background: linear-gradient(135deg,
@@ -1052,18 +1132,18 @@ iframe.soundcloud {
     padding: 0 20px;
   }
   #body h1 {
-    font-size: 45px;
-    line-height: 1.2em;
+    font-size: 32px;
+    line-height: 1.3em;
     margin: 30px 0;
   }
   #body h2 {
-    font-size: 28px;
+    font-size: 22px;
     margin: 20px 0;
   }
   div.page h2 {
-    font-size: 42px;
-    padding: 35px 40px;
-    margin: 60px auto 70px auto;
+    font-size: 52px;
+    padding: 40px 45px;
+    margin: 30px auto 70px auto;
   }
   #body p {
     font-size: 16px;
@@ -1071,8 +1151,8 @@ iframe.soundcloud {
     margin-bottom: 18px;
   }
   .social-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
   .soundcloud-button {
     width: 80%;
@@ -1113,9 +1193,15 @@ iframe.soundcloud {
   div.page {
     min-height: calc(100vh - 90px);
     padding-top: 120px;
+    padding-bottom: 60px;
   }
   #body h1 {
-    font-size: 35px;
+    font-size: 24px;
+    line-height: 1.4em;
+  }
+  .social-icon {
+    width: 28px;
+    height: 28px;
   }
   .avatar {
     width: 200px;
@@ -1284,6 +1370,12 @@ img[src*=".jpg"], img[src*=".png"] {
   div.page {
     padding-top: 140px;
     padding-bottom: 60px;
+  }
+  
+  div.page:not(:last-child)::after {
+    width: 200px;
+    height: 3px;
+    bottom: -30px;
   }
   div.page::before {
     left: -20px;
