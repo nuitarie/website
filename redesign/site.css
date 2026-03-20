@@ -1434,8 +1434,7 @@ img {
 
 /* Enterprise bonus strip */
 .enterprise-bonus {
-  border: 1px solid var(--border);
-  padding: 3rem 2.5rem;
+  padding: 1.5rem 0 0;
   text-align: center;
 }
 .enterprise-bonus p {
@@ -1443,7 +1442,7 @@ img {
   color: var(--text-muted);
   line-height: 1.75;
   max-width: 700px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
 }
 .enterprise-bonus strong { color: var(--white); font-weight: 400; }
 .enterprise-bonus-actions {
