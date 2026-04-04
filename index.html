@@ -1,512 +1,923 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Nuitarie - Autrice-compositrice-interprète, coach vocal et cheffe de chœur. Découvrez ma musique sur Spotify, Apple Music, et réservez vos cours de chant.">
-    <meta name="keywords" content="Nuitarie, musique, chant, coach vocal, compositrice, cours de chant, technique vocale">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nuitarie — Professeure de chant, cheffe de chœur et autrice-compositrice-interprète. Cours de chant, direction de chœur, ateliers en entreprise et musique originale.">
+    <meta name="keywords" content="Nuitarie, cours de chant, professeure de chant, cheffe de choeur, compositrice, coaching vocal, ateliers entreprise">
     <meta name="author" content="Nuitarie">
-    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Nuitarie - Autrice, compositrice, interprète, coach vocal">
-    <meta property="og:description" content="Découvrez l'univers musical de Nuitarie - compositions originales, cours de chant et coaching vocal.">
+    <meta property="og:title" content="Nuitarie — Professeure de chant & Compositrice">
+    <meta property="og:description" content="Cours de chant, direction de chœur, ateliers en entreprise et musique originale.">
     <meta property="og:image" content="images/nuitarie.png">
-    <meta property="og:url" content="https://nuitarie.eu">
+    <meta property="og:url" content="https://www.nuitarie.eu">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nuitarie - Autrice, compositrice, interprète">
-    <meta name="twitter:description" content="Découvrez l'univers musical de Nuitarie - compositions originales, cours de chant et coaching vocal.">
-    <meta name="twitter:image" content="images/nuitarie.png">
-    <title>Nuitarie - Autrice, compositrice, interprète, coach vocal et cheffe de chœur</title>
-    <!-- icon -->
-    <link rel="icon" href="images/logo.png" />
-    <!-- fonts -->
-    <link rel="stylesheet" href="fonts.css">
+    <title>Nuitarie — Professeure de chant, Cheffe de chœur & Compositrice</title>
+    <link rel="icon" href="../images/logo.png">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
-    <!-- bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <!-- style -->
+    <!-- Styles -->
     <link rel="stylesheet" href="site.css">
   </head>
   <body>
-    <!-- BACKGROUND -->
-    <div id="background">
-      <video loop="loop" autoplay preload="metadata" muted="" playsinline poster="images/nuitarie.png">
-        <source src="video.mp4" type="video/mp4">
-        <!-- Fallback background for devices that don't support video -->
-        <div class="video-fallback" style="background-image: url('images/nuitarie.png');"></div>
-      </video>
-      <!-- Overlay to change video color -->
-      <div class="overlay"></div>
-    </div>
-    <!-- HEADER -->
-    <header id="header" role="banner">
-      <div class="header">
-        <!-- title (logo) -->
-        <div class="title">
-          <!-- Logo -->
-          <div class="logo"></div>
-        </div>
-        <!-- Hamburger Menu Button -->
-        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <nav role="navigation" aria-label="Navigation principale" id="nav-menu">
-          <div>
-            <a class="nav" href="#home" aria-label="Aller à la section Accueil" onclick="closeMenu()">ACCUEIL</a>
-            <a class="nav" href="#music" aria-label="Aller à la section Musique" onclick="closeMenu()">MUSIQUE</a>
-            <a class="nav" href="#contact" aria-label="Aller à la section Contact" onclick="closeMenu()">CONTACT</a>
-            <a class="nav nav_last" href="" data-bs-toggle="modal" data-bs-target="#cv-modal" aria-label="Ouvrir le CV" onclick="closeMenu()">CV</a>
-            <!--<a class="nav nav" href="#contact">CONTACT</a>-->
-            <!--<a class="nav nav_last" href="" data-toggle="modal" data-target="#cours-modal">COURS DE CHANT</a>-->
-          </div>
+
+    <!-- ===== HEADER ===== -->
+    <header id="site-header">
+      <div class="header-inner">
+        <a class="site-logo" href="#" onclick="showTab('teaching'); return false;">NUITARIE</a>
+
+        <nav class="tab-nav" role="navigation" aria-label="Sections principales">
+          <button class="tab-btn active" data-tab="teaching" onclick="showTab('teaching')">
+            <span class="fr-text">Enseignement</span><span class="en-text">Teaching</span>
+          </button>
+          <button class="tab-btn" data-tab="creative" onclick="showTab('creative')">
+            <span class="fr-text">Création</span><span class="en-text">Creative Work</span>
+          </button>
         </nav>
+
+        <div class="header-right">
+          <a href="#contact" class="header-contact-link">
+            <span class="fr-text">Contact</span><span class="en-text">Contact</span>
+          </a>
+          <a href="#" class="header-contact-link" data-bs-toggle="modal" data-bs-target="#cv-modal">CV</a>
+          <div class="lang-switcher">
+            <button class="lang-btn active" id="btn-fr" onclick="switchLang('fr')">FR</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
+          </div>
+          <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#contact" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+        <a href="#" class="mobile-link" data-bs-toggle="modal" data-bs-target="#cv-modal" onclick="closeMobileMenu()">CV</a>
+        <div class="mobile-lang">
+          <button class="lang-btn active" id="mobile-btn-fr" onclick="switchLang('fr')">FR</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" id="mobile-btn-en" onclick="switchLang('en')">EN</button>
+        </div>
       </div>
     </header>
-    <!-- MAIN CONTENT -->
-    <main id="body" role="main">
-      <!--- HOMEPAGE -->
-      <section class="page" id="home" aria-labelledby="home-title">
-        <hr>
-        <h1 id="home-title">
-          <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Visiter la page Facebook de Nuitarie">
-            <img class="social-icon" alt="Facebook" src="images/facebook.png">
-          </a>
-          <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="Écouter sur SoundCloud">
-            <img class="social-icon" alt="SoundCloud" src="images/soundcloud.png">
-          </a>
-          Nuitarie
-          <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="Regarder sur YouTube">
-            <img class="social-icon" alt="YouTube" src="images/youtube.png">
-          </a>
-          <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Suivre sur Instagram">
-            <img class="social-icon" alt="Instagram" src="images/instagram.png">
-          </a>
-        </h1>
-        <h2>Autrice-compositrice-interprète, coach vocal et cheffe de chœur</h2>
-        <hr>
-        <div class="row">
-          <div class="col-md-5 d-flex align-items-center justify-content-center">
-            <div title="Avatar réalisé par PirateCashoo" class="avatar-container">
-              <div class="avatar">
-                <img alt="Portrait artistique de Nuitarie - autrice compositrice interprète" src="images/nuitarie.png" height="100%">
-              </div>
-              <div class="avatar-scotch-left"></div>
-              <div class="avatar-scotch-right"></div>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <!-- Language Content Wrapper -->
-            <div class="language-content-wrapper">
-              <!-- French Content -->
-              <div class="language-content french-content active" id="french-content">
-                <div class="language-flags">
-                  <img alt="Français" src="images/fr.png" class="flag-icon clickable active" data-lang="fr" onclick="switchLanguage('fr')">
-                  <img alt="English" src="images/en.png" class="flag-icon clickable" data-lang="en" onclick="switchLanguage('en')">
-                </div>
-            <p>Je compose des musiques et des chansons, en créant des mélodies et des paysages oniriques, des peintures sonores peuplées d’étranges créatures. Pour écouter mon travail, je vous invite sur Spotify, Deezer, Google Play, Apple Music ou encore Bandcamp… Vous pouvez également écouter mes expérimentations et travaux en cours sur Soundcloud.</p>
-            <p class="text-center"><a href="#music" class="soundcloud-button">Découvrez ma musique</a></p>
-            <p>Je propose des cours de chant et de technique vocale pour vous faire chanter, vibrer et grandir. Posez votre respiration et (re)découvrez votre voix, dans un travail respectueux, sans violence. Vous choisissez vos chansons (ou je vous en propose) et nous explorons ensemble les possibilités de votre voix, dans le bien-être et le plaisir. Tarif : 40€/heure. Possibilité de forfaits. Vous pouvez également me trouver sur des sites comme <a href="https://www.superprof.fr/professeure-chant-huningue-donne-cours-chant-musique-specialite-musiques-actuelles.html">Superprof</a> et <a href="https://www.apprentus.fr/cours-particuliers/huningue/art-musique/solfege/singing-lessons-modern-music-vocal-coachin">Apprentus</a>.</p>
-            <p>Je propose des stages et ateliers pour les artistes mais aussi pour les entreprises (coaching vocal, teambuilding). Pour en savoir plus, vous pouvez télécharger la <a href="data/Ateliers pour entreprises.pdf" target="_blank">brochure dédiée</a>.</p>
-            </div>
-              <!-- English Content -->
-              <div class="language-content english-content" id="english-content">
-                <div class="language-flags">
-                  <img alt="Français" src="images/fr.png" class="flag-icon clickable" data-lang="fr" onclick="switchLanguage('fr')">
-                  <img alt="English" src="images/en.png" class="flag-icon clickable active" data-lang="en" onclick="switchLanguage('en')">
-                </div>
-            <p>I compose music and songs, creating dreamlike landscapes and sound paintings populated by strange creatures. To listen to my work, please head to Spotify, Deezer, Google Play, Apple Music or even Bandcamp… You can also listen to my experiments and works in progress on Soundcloud.</p>
-            <p class="text-center"><a href="#music" class="soundcloud-button">Listen to my music</a></p>
-            <p>I offer singing and vocal technique lessons to make you sing, feel good and grow. Breathe deeply and (re) discover your voice, in a respectful setting, without any violence. You choose your songs (or I suggest them to you) and together we explore the possibilities of your voice, with well-being and pleasure in mind. Price: 40 € / hour. Possibility of packages. You can also find me on sites like <a href="https://www.superprof.fr/professeure-chant-huningue-donne-cours-chant-musique-specialite-musiques-actuelles.html">Superprof</a> and <a href="https://www.apprentus.fr/cours-particuliers/huningue/art-musique/solfege/singing-lessons-modern-music-vocal-coachin">Apprentus</a>.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--- MUSIC -->
-      <section class="page" id="music" aria-labelledby="music-title">
-        <h2 id="music-title">MUSIQUE</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="music-album">
-              <h3>EP : Ghost Love Stories</h3>
-              <iframe src="https://open.spotify.com/embed?uri=spotify:album:6PjwZkGaOBeuKfvza1zWz5&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-              <div class="streaming-platforms text-center">
-                Disponible sur toutes les plateformes de streaming:<br>
-                <a href="https://music.apple.com/us/album/ghost-love-stories-ep/1606383341">
-                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
-                </a>
-                <a href="https://open.spotify.com/album/6PjwZkGaOBeuKfvza1zWz5">
-                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
-                </a>
-                <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-2_HzE8nPIhaH5ZiVjNAEPDaDCGp6jS4">
-                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.deezer.com/fr/album/289490922">
-                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.amazon.com/dp/B09QXGZLHF/">
-                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
-                </a>
-              </div>
-            </div>
-            <div class="music-album">
-              <h3>EP : Dans une parure de plumes grises</h3>
-              <iframe src="https://open.spotify.com/embed?uri=spotify:album:5xyY8kfnR0Ol3n7wZlBhJm&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-              <div class="streaming-platforms text-center">
-                Disponible sur toutes les plateformes de streaming:<br>
-                <a href="https://music.apple.com/fr/album/dans-une-parure-de-plumes-grises-ep/1519531914">
-                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
-                </a>
-                <a href="https://open.spotify.com/album/5xyY8kfnR0Ol3n7wZlBhJm">
-                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
-                </a>
-                <a href="https://music.youtube.com/playlist?list=OLAK5uy_mMh3gpKuw8WHR3BP-GJD-ZRCOOg518gKM">
-                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.deezer.com/fr/album/155768242">
-                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
-                </a>
-                <a href="https://nuitarie.bandcamp.com/album/dans-une-parure-de-plumes-grises">
-                  <img alt="Écouter sur Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.amazon.com/gp/product/B08BJ68B8C/">
-                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
-                </a>
-              </div>
-            </div>
-            <div class="music-album">
-              <h3>EP : Pluto 1982</h3>
-              <iframe src="https://open.spotify.com/embed?uri=spotify:album:03zexZdmhijf31yIxVBt80&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-              <div class="streaming-platforms text-center">
-                Disponible sur toutes les plateformes de streaming:<br>
-                <a href="https://music.apple.com/fr/album/pluto-1982-single/1454810119">
-                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
-                </a>
-                <a href="https://open.spotify.com/album/03zexZdmhijf31yIxVBt80">
-                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
-                </a>
-                <a href="https://music.youtube.com/playlist?list=OLAK5uy_kVUC7PsSWZQiDYGpmx9gMfLCPaCjgdqcE">
-                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.deezer.com/fr/album/88805322">
-                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
-                </a>
-                <a href="https://nuitarie.bandcamp.com/album/pluto-1982">
-                  <img alt="Écouter sur Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.amazon.com/Pluto-1982-Nuitarie/dp/B07P6RM67M">
-                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
-                </a>
-              </div>
-            </div>
-            <div class="music-album">
-              <h3>EP : Arcaibh - The Lost Island</h3>
-              <iframe src="https://open.spotify.com/embed?uri=spotify:album:7vbRXRZjBaFZHhxzicrio2&theme=white" width="475" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
-              <div class="streaming-platforms text-center">
-                Disponible sur toutes les plateformes de streaming:<br>
-                <a href="https://itunes.apple.com/fr/album/arcaibh-the-lost-island-ep/1365507014">
-                  <img alt="Écouter sur Apple Music" src="images/itunes.png" width="50px" height="50px">
-                </a>
-                <a href="https://open.spotify.com/album/7vbRXRZjBaFZHhxzicrio2">
-                  <img alt="Écouter sur Spotify" src="images/spotify.png" width="50px" height="50px">
-                </a>
-                <a href="https://music.youtube.com/playlist?list=OLAK5uy_nzJ5J1vmqc4EnRW-qCRx5YOsFp9mQd6Vc">
-                  <img alt="Écouter sur YouTube Music" src="images/youtube-music.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.deezer.com/fr/album/60096292">
-                  <img alt="Écouter sur Deezer" src="images/deezer.png" width="50px" height="50px">
-                </a>
-                <a href="https://nuitarie.bandcamp.com/album/arcaibh-the-lost-island">
-                  <img alt="Écouter sur Bandcamp" src="images/bandcamp.png" width="50px" height="50px">
-                </a>
-                <a href="https://www.amazon.fr/Arcaibh-Lost-Island-Nuitarie/dp/B07BSRR1M2">
-                  <img alt="Écouter sur Amazon Music" src="images/amazon.png" width="50px" height="50px">
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="soundcloud-collection">
-              <h3>Collection "Crown of Thorns"</h3>
-              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929180185&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            </div>
-            <div class="soundcloud-collection">
-              <h3>Collection Covers</h3>
-              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/576955974&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            </div>
-            <a href="https://soundcloud.com/nuitarie" target="_blank" class="soundcloud-button">Visitez mon Soundcloud !</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 covers">
-            <h3>Clips vidéo et performances</h3>
-            <p class="text-center video-description">Découvrez l'univers visuel de Nuitarie à travers ses clips et performances live</p>
-            <!-- Featured Video - Full Width -->
-            <div class="video-container featured-video">
-              <iframe class="youtube featured" src="https://www.youtube-nocookie.com/embed/MidhKqrWSqc?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Pompeii (Bastille Cover)"></iframe>
-              <p class="video-caption">"Pompeii" - Reprise du célèbre titre de Bastille, réinterprété avec la sensibilité et l'approche vocale unique de Nuitarie</p>
-            </div>
-            <!-- Three Videos in Row for Desktop -->
-            <div class="row video-row">
-              <div class="col-md-4">
-                <div class="video-container compact">
-                  <iframe class="youtube compact" src="https://www.youtube-nocookie.com/embed/8-jeecoXGds?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Jenny Of Oldstones (Game of Thrones Cover)"></iframe>
-                  <p class="video-caption">"Jenny Of Oldstones" - Reprise émouvante de Game of Thrones, accompagnée à la harpe celtique dans un style intimiste</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="video-container compact">
-                  <iframe class="youtube compact" src="https://www.youtube-nocookie.com/embed/WJJx7d6R7pM?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Shéhérazade (Composition Originale)"></iframe>
-                  <p class="video-caption">"Shéhérazade" - Composition originale de Nuitarie, évoquant les contes des Mille et Une Nuits avec finesse et poésie</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="video-container compact">
-                  <iframe class="youtube compact" src="https://www.youtube-nocookie.com/embed/zpY64xyAiek?rel=0&modestbranding=1" allowfullscreen="" title="Nuitarie - Sweet Relief (Madison Beer Cover)"></iframe>
-                  <p class="video-caption">"Sweet Relief" - Reprise du titre de Madison Beer, démontrant la versatilité vocale et l'interprétation moderne de Nuitarie</p>
-                </div>
-              </div>
-            </div>
-            <!-- YouTube Channel Link -->
-            <div class="text-center" style="margin-top: 40px;">
-              <a href="https://youtube.com/user/miracleworkerking" target="_blank" class="youtube-channel-button">
-                <img src="images/youtube.png" alt="YouTube" width="24" height="24" style="margin-right: 10px; vertical-align: middle;">
-                Visitez ma chaîne YouTube
+
+    <!-- ========================================================
+         ENSEIGNEMENT TAB
+    ======================================================== -->
+    <div id="tab-teaching" class="tab-panel active">
+
+      <!-- Hero -->
+      <section class="teaching-hero" role="banner">
+        <div class="teaching-hero-bg" style="background-image: url('images/modal4.jpg')"></div>
+        <div class="teaching-hero-overlay"></div>
+        <div class="teaching-hero-inner">
+          <div class="teaching-hero-text">
+            <span class="eyebrow teaching-eyebrow">
+              <span class="fr-text">Professeure de chant · Cheffe de chœur</span>
+              <span class="en-text">Singing Teacher · Choir Director</span>
+            </span>
+            <h1>
+              <span class="fr-text">L'excellence vocale,<br>à votre portée</span>
+              <span class="en-text">Vocal excellence,<br>within your reach</span>
+            </h1>
+            <p class="hero-desc">
+              <span class="fr-text">Diplômée d'un Master des Métiers de l'Enseignement et formée au Studio des Variétés à Paris, j'accompagne chanteurs et chorales vers l'épanouissement vocal dans un cadre bienveillant et appliqué.</span>
+              <span class="en-text">Holding a Master's in Teaching and trained at the Studio des Variétés in Paris, I guide singers and choirs toward vocal fulfillment in a caring yet demanding environment.</span>
+            </p>
+            <div class="hero-actions">
+              <a href="#teaching-services" class="btn-primary">
+                <span class="fr-text">Mes services</span><span class="en-text">My services</span>
+              </a>
+              <a href="#contact" class="btn-ghost">
+                <span class="fr-text">Prendre contact</span><span class="en-text">Get in touch</span>
               </a>
             </div>
           </div>
+          <div class="teaching-hero-photo">
+            <img src="../images/photo.jpg" alt="Nuitarie — Professeure de chant">
+          </div>
         </div>
       </section>
-      <!--- CONTACT -->
-      <section class="page" id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">CONTACT</h2>
-        <div class="row align-items-center">
-          <div class="col-md-6 d-flex justify-content-center">
-            <div class="contact-photos-frame">
-              <div class="contact-photo">
-                <img alt="Photo professionnelle de Nuitarie" src="images/photo.jpg">
+
+      <!-- Services -->
+      <section id="teaching-services" class="section-block bg-surface">
+        <div class="content-container">
+          <div class="section-header">
+            <span class="section-eyebrow">
+              <span class="fr-text">Services</span><span class="en-text">Services</span>
+            </span>
+            <h2>
+              <span class="fr-text">Ce que je propose</span>
+              <span class="en-text">What I offer</span>
+            </h2>
+          </div>
+          <div class="services-grid">
+
+            <div class="service-card">
+              <div class="service-number">01</div>
+              <h3>
+                <span class="fr-text">Cours particuliers</span>
+                <span class="en-text">Private lessons</span>
+              </h3>
+              <p>
+                <span class="fr-text">Cours de chant et de technique vocale, individuels ou en petit groupe (jusqu'à 3 élèves). Vous choisissez vos chansons et nous explorons ensemble les possibilités de votre voix, dans le plaisir et le bien-être.</span>
+                <span class="en-text">Singing and vocal technique lessons, individual or small group (up to 3 students). You choose your songs and we explore the possibilities of your voice together, with your pleasure and your well-being in mind.</span>
+              </p>
+              <div class="service-price">50 € / h</div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-number">02</div>
+              <h3>
+                <span class="fr-text">Direction de chœur</span>
+                <span class="en-text">Choir Direction</span>
+              </h3>
+              <p>
+                <span class="fr-text">Présidente de <a href="https://www.popcornala.fr/" target="_blank" rel="noopener">Pop'Cornala</a> — 8 voix a cappella à Huningue qui chantent la pop-culture avec beaucoup trop d'enthousiasme.</span>
+                <span class="en-text">President of <a href="https://www.popcornala.fr/" target="_blank" rel="noopener">Pop'Cornala</a> — 8 a cappella voices in Huningue singing pop-culture with way too much enthusiasm.</span>
+              </p>
+            </div>
+
+            <div class="service-card">
+              <div class="service-number">03</div>
+              <h3>
+                <span class="fr-text">Ateliers en entreprise</span>
+                <span class="en-text">Corporate Workshops</span>
+              </h3>
+              <p>
+                <span class="fr-text">Stages et ateliers pour les entreprises : coaching vocal, team-building par le chant et développement des compétences en communication. Une approche originale, efficace et mémorable.</span>
+                <span class="en-text">Workshops for companies: vocal coaching, singing-based team-building and communication skills development. An original, effective and memorable approach.</span>
+              </p>
+              <a href="#enterprise" class="service-download">
+                <span class="fr-text">Voir les formules</span>
+                <span class="en-text">See the packages</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Credentials / About -->
+      <section class="section-block bg-dark">
+        <div class="content-container">
+          <div class="credentials-grid">
+            <div class="credentials-image">
+              <img src="../images/modal1.jpg" alt="Nuitarie en cours de chant">
+            </div>
+            <div class="credentials-text">
+              <span class="section-eyebrow teaching-eyebrow">
+                <span class="fr-text">Parcours</span>
+                <span class="en-text">Background</span>
+              </span>
+              <h2>
+                <span class="fr-text">Une pédagogie bienveillante et rigoureuse</span>
+                <span class="en-text">A caring and rigorous pedagogy</span>
+              </h2>
+              <p>
+                <span class="fr-text">Diplômée d'un Master des Métiers de l'Enseignement (MEEF), j'ai suivi les cours du Studio des Variétés à Paris. Ma pédagogie privilégie la motivation et le plaisir à partir d'un répertoire adapté à chacun.</span>
+                <span class="en-text">Holding a Master's in Teaching (MEEF), I trained at the Studio des Variétés in Paris. My pedagogy prioritizes motivation and pleasure, starting from a repertoire tailored to each student.</span>
+              </p>
+              <p>
+                <span class="fr-text">Je travaille sur la respiration, la posture, le placement de voix et l'interprétation — pour que chaque élève puisse (re)trouver sa voix et s'épanouir vocalement, sans violence et en toute bienveillance.</span>
+                <span class="en-text">I work on breathing, posture, voice placement and interpretation — so that each student can (re)discover their voice and flourish vocally, without pressure, in a caring space.</span>
+              </p>
+              <ul class="credentials-list">
+                <li><span class="fr-text">Titre MIMA — Musicien Interprète des Musiques Actuelles, Studio des Variétés, Paris (2017)</span><span class="en-text">MIMA — Contemporary Music Performer, Studio des Variétés, Paris (2017)</span></li>
+                <li><span class="fr-text">Master MEEF — Métiers de l'Enseignement, de l'Éducation et de la Formation, Paris VII (2014)</span><span class="en-text">Master's in Teaching (MEEF), Paris VII (2014)</span></li>
+                <li><span class="fr-text">Agrément Chant Musiques Actuelles — CDMC (2023)</span><span class="en-text">Contemporary Singing Accreditation — CDMC (2023)</span></li>
+                <li><span class="fr-text">CVT — Complete Vocal Institute, Copenhague (2024, 2025)</span><span class="en-text">CVT — Complete Vocal Institute, Copenhagen (2024, 2025)</span></li>
+                <li><span class="fr-text">The King Singers' Summer School — Direction de chœur (2017)</span><span class="en-text">The King Singers' Summer School — Choral direction (2017)</span></li>
+                <li><span class="fr-text">Cheffe de chœur — Negitachi, Turbulence Hirsingue, Pop'Cornala et autres ensembles</span><span class="en-text">Choir Director — Negitachi, Turbulence Hirsingue, Pop'Cornala and other ensembles</span></li>
+                <li><span class="fr-text">Professeure — Écoles de musique de Kembs, Village-Neuf, Sierentz, <a href="https://www.huningue.fr/votre-quotidien/vie-culturelle/academie-des-arts/musique/" target="_blank" rel="noopener">Le Triangle (Huningue)</a> et <a href="https://www.lacometehesingue.fr/activites/ecole-de-comedie-musicale" target="_blank" rel="noopener">École de comédie musicale de Hésingue (La Comète)</a></span><span class="en-text">Teacher — Music schools in Kembs, Village-Neuf, Sierentz, <a href="https://www.huningue.fr/votre-quotidien/vie-culturelle/academie-des-arts/musique/" target="_blank" rel="noopener">Le Triangle (Huningue)</a> and <a href="https://www.lacometehesingue.fr/activites/ecole-de-comedie-musicale" target="_blank" rel="noopener">École de comédie musicale de Hésingue (La Comète)</a></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="gallery-section">
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="../images/modal1.jpg" alt="Cours de chant"></div>
+          <div class="gallery-item"><img src="../images/modal2.jpg" alt="Atelier vocal"></div>
+          <div class="gallery-item"><img src="../images/modal3.jpg" alt="Performance"></div>
+          <div class="gallery-item"><img src="../images/modal4.jpg" alt="Coaching vocal"></div>
+        </div>
+      </section>
+
+      <!-- Enterprise full section -->
+      <section id="enterprise" class="section-block bg-surface">
+        <div class="content-container">
+
+          <div class="section-header">
+            <span class="section-eyebrow teaching-eyebrow">
+              <span class="fr-text">Entreprises</span>
+              <span class="en-text">Corporate</span>
+            </span>
+            <h2>
+              <span class="fr-text">Allez, on chante !</span>
+              <span class="en-text">Let's sing!</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="fr-text">Un atelier de coaching vocal &amp; team-building — chanter, prendre la parole, s'affirmer et partager. La maîtrise de la voix donne de l'assurance, de la confiance en soi et améliore les relations avec les autres.</span>
+              <span class="en-text">A vocal coaching &amp; team-building workshop — sing, speak up, assert yourself and share. Mastering your voice builds confidence and improves relationships with others.</span>
+            </p>
+          </div>
+
+          <!-- Three pillars -->
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <span class="pillar-icon">◉</span>
+              <h3><span class="fr-text">Bien-être</span><span class="en-text">Well-being</span></h3>
+              <ul>
+                <li><span class="fr-text">Améliorer la respiration</span><span class="en-text">Improve breathing</span></li>
+                <li><span class="fr-text">Mieux maîtriser ses émotions</span><span class="en-text">Better manage emotions</span></li>
+                <li><span class="fr-text">Diminuer le stress lors des prises de parole</span><span class="en-text">Reduce stress when speaking in public</span></li>
+              </ul>
+            </div>
+            <div class="pillar-card">
+              <span class="pillar-icon">◈</span>
+              <h3><span class="fr-text">Performances vocales</span><span class="en-text">Vocal performance</span></h3>
+              <ul>
+                <li><span class="fr-text">Découvrir comment fonctionne sa voix</span><span class="en-text">Discover how your voice works</span></li>
+                <li><span class="fr-text">Projeter et soutenir sa parole en public</span><span class="en-text">Project and sustain your voice in public</span></li>
+                <li><span class="fr-text">Améliorer sa diction</span><span class="en-text">Improve diction</span></li>
+              </ul>
+            </div>
+            <div class="pillar-card">
+              <span class="pillar-icon">◎</span>
+              <h3><span class="fr-text">Team-building</span><span class="en-text">Team-building</span></h3>
+              <ul>
+                <li><span class="fr-text">Construire la confiance et la convivialité dans l'équipe</span><span class="en-text">Build trust and conviviality in the team</span></li>
+                <li><span class="fr-text">Collaborer dans le respect et la bienveillance</span><span class="en-text">Collaborate with respect and kindness</span></li>
+                <li><span class="fr-text">Créer du lien et de la solidarité en s'amusant</span><span class="en-text">Create bonds and solidarity while having fun</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div class="pricing-header">
+            <span class="section-eyebrow teaching-eyebrow">
+              <span class="fr-text">Tarifs</span><span class="en-text">Pricing</span>
+            </span>
+            <h3>
+              <span class="fr-text">Choisissez votre formule</span>
+              <span class="en-text">Choose your plan</span>
+            </h3>
+            <p>
+              <span class="fr-text">De 4 à 12 participants · Déplacements possibles</span>
+              <span class="en-text">4 to 12 participants · Travel possible</span>
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+
+            <!-- Individual coaching -->
+            <div class="pricing-card">
+              <div class="pricing-label">
+                <span class="fr-text">Coaching individuel</span>
+                <span class="en-text">Individual coaching</span>
               </div>
-              <div class="contact-photos-scotch"></div>
+              <div class="pricing-amount">50 <span>€</span></div>
+              <div class="pricing-period">
+                <span class="fr-text">/ séance TTC</span>
+                <span class="en-text">/ session TTC</span>
+              </div>
+              <ul class="pricing-features">
+                <li><span class="fr-text">Séances d'1h individuelles</span><span class="en-text">Individual 1h sessions</span></li>
+                <li><span class="fr-text">Outils pour maîtriser sa voix</span><span class="en-text">Tools to master your voice</span></li>
+                <li><span class="fr-text">Accompagnement personnalisé</span><span class="en-text">Personalised support</span></li>
+              </ul>
+              <a href="#contact" class="btn-ghost">
+                <span class="fr-text">Prendre contact</span><span class="en-text">Get in touch</span>
+              </a>
+            </div>
+
+            <!-- Half-day (featured) -->
+            <div class="pricing-card pricing-featured">
+              <div class="pricing-badge">
+                <span class="fr-text">Le plus populaire</span><span class="en-text">Most popular</span>
+              </div>
+              <div class="pricing-label">
+                <span class="fr-text">Demi-journée</span><span class="en-text">Half-day</span>
+              </div>
+              <div class="pricing-amount">300 <span>€</span></div>
+              <div class="pricing-period">
+                <span class="fr-text">TTC · 4h d'atelier</span>
+                <span class="en-text">TTC · 4h workshop</span>
+              </div>
+              <ul class="pricing-features">
+                <li><span class="fr-text">Accueil &amp; échauffements (8h30–9h)</span><span class="en-text">Welcome &amp; warm-ups (8:30–9:00)</span></li>
+                <li><span class="fr-text">Jeux rythmiques &amp; sonores (9h–9h45)</span><span class="en-text">Rhythmic &amp; sound games (9:00–9:45)</span></li>
+                <li><span class="fr-text">Sound painting &amp; circle songs (10h–11h15)</span><span class="en-text">Sound painting &amp; circle songs (10:00–11:15)</span></li>
+                <li><span class="fr-text">Chant collectif &amp; technique vocale (11h30–12h30)</span><span class="en-text">Collective singing &amp; technique (11:30–12:30)</span></li>
+                <li><span class="fr-text">4 à 12 participants</span><span class="en-text">4 to 12 participants</span></li>
+              </ul>
+              <a href="#contact" class="btn-primary">
+                <span class="fr-text">Demander un devis</span><span class="en-text">Request a quote</span>
+              </a>
+            </div>
+
+            <!-- Full day -->
+            <div class="pricing-card">
+              <div class="pricing-label">
+                <span class="fr-text">Journée entière</span><span class="en-text">Full day</span>
+              </div>
+              <div class="pricing-amount">550 <span>€</span></div>
+              <div class="pricing-period">
+                <span class="fr-text">TTC · 7h30 d'atelier</span>
+                <span class="en-text">TTC · 7h30 workshop</span>
+              </div>
+              <ul class="pricing-features">
+                <li><span class="fr-text">Tout le programme demi-journée</span><span class="en-text">Full half-day programme</span></li>
+                <li><span class="fr-text">+ Posture &amp; respiration (14h–14h45)</span><span class="en-text">+ Posture &amp; breathing (14:00–14:45)</span></li>
+                <li><span class="fr-text">+ Projection vocale &amp; émotionnelle (15h–16h15)</span><span class="en-text">+ Vocal &amp; emotional projection (15:00–16:15)</span></li>
+                <li><span class="fr-text">+ Second chant collectif &amp; débriefing (16h30–17h30)</span><span class="en-text">+ Second collective song &amp; debrief (16:30–17:30)</span></li>
+                <li><span class="fr-text">4 à 12 participants</span><span class="en-text">4 to 12 participants</span></li>
+              </ul>
+              <a href="#contact" class="btn-ghost">
+                <span class="fr-text">Demander un devis</span><span class="en-text">Request a quote</span>
+              </a>
+            </div>
+
+            <!-- Company choir -->
+            <div class="pricing-card">
+              <div class="pricing-label">
+                <span class="fr-text">Chorale d'entreprise</span><span class="en-text">Company choir</span>
+              </div>
+              <div class="pricing-amount" style="font-size:2rem;margin-top:.5rem">
+                <span class="fr-text" style="font-size:1rem;color:var(--text-muted)">Sur devis</span>
+                <span class="en-text" style="font-size:1rem;color:var(--text-muted)">On request</span>
+              </div>
+              <div class="pricing-period">
+                <span class="fr-text">Projet sur mesure</span>
+                <span class="en-text">Bespoke project</span>
+              </div>
+              <ul class="pricing-features">
+                <li><span class="fr-text">Création et direction d'un chœur d'entreprise</span><span class="en-text">Creation and direction of a company choir</span></li>
+                <li><span class="fr-text">Projet artistique fédérateur</span><span class="en-text">Unifying artistic project</span></li>
+                <li><span class="fr-text">Concert interne ou représentation publique</span><span class="en-text">Internal concert or public performance</span></li>
+                <li><span class="fr-text">Programme et durée personnalisés</span><span class="en-text">Custom programme and duration</span></li>
+              </ul>
+              <a href="#contact" class="btn-ghost">
+                <span class="fr-text">Parlons-en</span><span class="en-text">Let's talk</span>
+              </a>
+            </div>
+
+          </div><!-- /pricing-grid -->
+
+          <!-- Bonus strip -->
+          <div class="enterprise-bonus">
+            <p>
+              <span class="fr-text">La brochure complète détaille le programme heure par heure, les objectifs pédagogiques et les modalités d'intervention.</span>
+              <span class="en-text">The full brochure details the hour-by-hour programme, learning objectives and delivery modalities.</span>
+            </p>
+            <div class="enterprise-bonus-actions">
+              <a href="../data/Ateliers pour entreprises.pdf" target="_blank" class="btn-ghost">
+                <span class="fr-text">Télécharger la brochure</span>
+                <span class="en-text">Download brochure</span>
+              </a>
+              <a href="#contact" class="btn-primary">
+                <span class="fr-text">Me contacter</span>
+                <span class="en-text">Contact me</span>
+              </a>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="rosace">
-              <img src="images/rosace.svg" alt="Rosace">
+
+        </div>
+      </section>
+
+    </div><!-- /tab-teaching -->
+
+
+    <!-- ========================================================
+         CRÉATION TAB
+    ======================================================== -->
+    <div id="tab-creative" class="tab-panel">
+
+      <!-- Hero -->
+      <section class="creative-hero" role="banner">
+        <video id="hero-video" autoplay muted loop playsinline>
+          <source src="../video.mp4" type="video/mp4">
+        </video>
+        <div class="creative-hero-overlay"></div>
+        <div class="creative-hero-content">
+          <div class="creative-social">
+            <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Facebook">
+              <img src="../images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="SoundCloud">
+              <img src="../images/soundcloud.png" alt="SoundCloud">
+            </a>
+            <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="YouTube">
+              <img src="../images/youtube.png" alt="YouTube">
+            </a>
+            <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="../images/instagram.png" alt="Instagram">
+            </a>
+          </div>
+          <h1>NUITARIE</h1>
+          <p class="creative-tagline">
+            <span class="fr-text">Autrice · Compositrice · Interprète</span>
+            <span class="en-text">Songwriter · Composer · Performer</span>
+          </p>
+          <a href="#discography" class="btn-outline-light">
+            <span class="fr-text">Découvrir la musique</span>
+            <span class="en-text">Discover the music</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Artist Bio -->
+      <section class="section-block bg-dark">
+        <div class="content-container">
+          <div class="artist-bio-grid">
+            <div class="artist-bio-image">
+              <img src="../images/nuitarie.png" alt="Nuitarie — Artiste">
             </div>
-            <div class="contact-form">
-              <form method="post" action="https://formspree.io/contact@nuitarie.eu">
-                <ul>
-                  <li>
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="Nom" placeholder="Nom">
-                  </li>
-                  <li>
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="E-mail" placeholder="E-mail">
-                  </li>
-                  <li>
-                    <label for="telephone">Numéro de téléphone</label>
-                    <input type="tel" id="telephone" name="Numéro de téléphone" placeholder="Numéro de téléphone">
-                  </li>
-                  <li>
-                    <label for="adresse">Adresse</label>
-                    <input type="text" id="adresse" name="Adresse" placeholder="Adresse">
-                  </li>
-                  <li>
-                    <label for="objet">Objet</label>
-                    <input type="text" id="objet" name="Objet" placeholder="Objet">
-                  </li>
-                  <li>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="Message" placeholder="Message"></textarea>
-                  </li>
-                </ul>
-                <div class="submit-button">
-                  <input type="submit" value="Envoyer">
-                </div>
-              </form>
-            </div>
-            <div class="rosace" style="transform: rotate(180deg) translateZ(0px); clear: both;">
-                <img src="images/rosace.svg" alt="Rosace">
+            <div class="artist-bio-text">
+              <span class="section-eyebrow">
+                <span class="fr-text">L'artiste</span>
+                <span class="en-text">The artist</span>
+              </span>
+              <h2>Nuitarie</h2>
+              <p>
+                <span class="fr-text">Je compose des musiques et des chansons, en créant des mélodies et des paysages oniriques, des peintures sonores peuplées d'étranges créatures. Mon univers mêle musiques actuelles, folk et sonorités électroniques pour créer une atmosphère unique et singulière.</span>
+                <span class="en-text">I compose music and songs, creating dreamlike melodies and soundscapes — sonic paintings populated by strange creatures. My world blends contemporary music, folk and electronic sounds to craft a singular and unique atmosphere.</span>
+              </p>
+              <p>
+                <span class="fr-text">Quatre EPs publiés, disponibles sur toutes les plateformes. Des expérimentations et travaux en cours accessibles sur SoundCloud, où l'univers créatif de Nuitarie se déploie librement.</span>
+                <span class="en-text">Four published EPs available on all platforms. Experiments and works in progress accessible on SoundCloud, where Nuitarie's creative world unfolds freely.</span>
+              </p>
+              <p>
+                <span class="fr-text">En parallèle, je prête ma voix, mon autoharpe et mes petites percussions à <a href="https://www.goodvibesonly68.fr/" target="_blank" rel="noopener">Good Vibes Only</a> — un quartet bossa nova, samba &amp; folk basé en Alsace, pour les concerts en plein air et les soirées où l'on a besoin d'un peu de soleil.</span>
+                <span class="en-text">Alongside, I sing, play autoharp and small percussion in <a href="https://www.goodvibesonly68.fr/" target="_blank" rel="noopener">Good Vibes Only</a> — a bossa nova, samba &amp; folk quartet based in Alsace, for open-air gigs and evenings that could use a little sunshine.</span>
+              </p>
+              <div class="streaming-icons-row">
+                <a href="https://open.spotify.com/album/6PjwZkGaOBeuKfvza1zWz5" target="_blank" title="Spotify" rel="noopener">
+                  <img src="../images/spotify.png" alt="Spotify">
+                </a>
+                <a href="https://music.apple.com/us/album/ghost-love-stories-ep/1606383341" target="_blank" title="Apple Music" rel="noopener">
+                  <img src="../images/itunes.png" alt="Apple Music">
+                </a>
+                <a href="https://www.deezer.com/fr/album/289490922" target="_blank" title="Deezer" rel="noopener">
+                  <img src="../images/deezer.png" alt="Deezer">
+                </a>
+                <a href="https://nuitarie.bandcamp.com/" target="_blank" title="Bandcamp" rel="noopener">
+                  <img src="../images/bandcamp.png" alt="Bandcamp">
+                </a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-2_HzE8nPIhaH5ZiVjNAEPDaDCGp6jS4" target="_blank" title="YouTube Music" rel="noopener">
+                  <img src="../images/youtube-music.png" alt="YouTube Music">
+                </a>
+                <a href="https://www.amazon.com/dp/B09QXGZLHF/" target="_blank" title="Amazon Music" rel="noopener">
+                  <img src="../images/amazon.png" alt="Amazon Music">
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </main>
-    <!-- FOOTER -->
-    <footer id="footer">
-      <div class="footer-content">
-        <div class="row">
-          <div class="col-md-4">
-            <h4>Nuitarie</h4>
-            <p>Autrice-compositrice-interprète, coach vocal et cheffe de chœur</p>
+
+      <!-- Discography -->
+      <section id="discography" class="section-block bg-surface">
+        <div class="content-container">
+          <div class="section-header">
+            <span class="section-eyebrow">
+              <span class="fr-text">Discographie</span><span class="en-text">Discography</span>
+            </span>
+            <h2>EPs</h2>
           </div>
-          <div class="col-md-4">
-            <h4>Contact</h4>
-            <p>contact@nuitarie.eu</p>
+          <div class="albums-grid">
+
+            <div class="album-card">
+              <h3>Ghost Love Stories</h3>
+              <div class="spotify-embed">
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/album/289490922" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write" loading="lazy"></iframe>
+              </div>
+              <div class="album-platforms">
+                <a href="https://music.apple.com/us/album/ghost-love-stories-ep/1606383341" target="_blank" rel="noopener" title="Apple Music"><img src="../images/itunes.png" alt="Apple Music"></a>
+                <a href="https://open.spotify.com/album/6PjwZkGaOBeuKfvza1zWz5" target="_blank" rel="noopener" title="Spotify"><img src="../images/spotify.png" alt="Spotify"></a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-2_HzE8nPIhaH5ZiVjNAEPDaDCGp6jS4" target="_blank" rel="noopener" title="YouTube Music"><img src="../images/youtube-music.png" alt="YouTube Music"></a>
+                <a href="https://www.deezer.com/fr/album/289490922" target="_blank" rel="noopener" title="Deezer"><img src="../images/deezer.png" alt="Deezer"></a>
+                <a href="https://www.amazon.com/dp/B09QXGZLHF/" target="_blank" rel="noopener" title="Amazon Music"><img src="../images/amazon.png" alt="Amazon Music"></a>
+              </div>
+            </div>
+
+            <div class="album-card">
+              <h3>Dans une parure de plumes grises</h3>
+              <div class="spotify-embed">
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/album/155768242" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write" loading="lazy"></iframe>
+              </div>
+              <div class="album-platforms">
+                <a href="https://music.apple.com/fr/album/dans-une-parure-de-plumes-grises-ep/1519531914" target="_blank" rel="noopener" title="Apple Music"><img src="../images/itunes.png" alt="Apple Music"></a>
+                <a href="https://open.spotify.com/album/5xyY8kfnR0Ol3n7wZlBhJm" target="_blank" rel="noopener" title="Spotify"><img src="../images/spotify.png" alt="Spotify"></a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_mMh3gpKuw8WHR3BP-GJD-ZRCOOg518gKM" target="_blank" rel="noopener" title="YouTube Music"><img src="../images/youtube-music.png" alt="YouTube Music"></a>
+                <a href="https://www.deezer.com/fr/album/155768242" target="_blank" rel="noopener" title="Deezer"><img src="../images/deezer.png" alt="Deezer"></a>
+                <a href="https://nuitarie.bandcamp.com/album/dans-une-parure-de-plumes-grises" target="_blank" rel="noopener" title="Bandcamp"><img src="../images/bandcamp.png" alt="Bandcamp"></a>
+                <a href="https://www.amazon.com/gp/product/B08BJ68B8C/" target="_blank" rel="noopener" title="Amazon Music"><img src="../images/amazon.png" alt="Amazon Music"></a>
+              </div>
+            </div>
+
+            <div class="album-card">
+              <h3>Pluto 1982</h3>
+              <div class="spotify-embed">
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/album/88805322" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write" loading="lazy"></iframe>
+              </div>
+              <div class="album-platforms">
+                <a href="https://music.apple.com/fr/album/pluto-1982-single/1454810119" target="_blank" rel="noopener" title="Apple Music"><img src="../images/itunes.png" alt="Apple Music"></a>
+                <a href="https://open.spotify.com/album/03zexZdmhijf31yIxVBt80" target="_blank" rel="noopener" title="Spotify"><img src="../images/spotify.png" alt="Spotify"></a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_kVUC7PsSWZQiDYGpmx9gMfLCPaCjgdqcE" target="_blank" rel="noopener" title="YouTube Music"><img src="../images/youtube-music.png" alt="YouTube Music"></a>
+                <a href="https://www.deezer.com/fr/album/88805322" target="_blank" rel="noopener" title="Deezer"><img src="../images/deezer.png" alt="Deezer"></a>
+                <a href="https://nuitarie.bandcamp.com/album/pluto-1982" target="_blank" rel="noopener" title="Bandcamp"><img src="../images/bandcamp.png" alt="Bandcamp"></a>
+                <a href="https://www.amazon.com/Pluto-1982-Nuitarie/dp/B07P6RM67M" target="_blank" rel="noopener" title="Amazon Music"><img src="../images/amazon.png" alt="Amazon Music"></a>
+              </div>
+            </div>
+
+            <div class="album-card">
+              <h3>Arcaibh — The Lost Island</h3>
+              <div class="spotify-embed">
+                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/album/60096292" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write" loading="lazy"></iframe>
+              </div>
+              <div class="album-platforms">
+                <a href="https://itunes.apple.com/fr/album/arcaibh-the-lost-island-ep/1365507014" target="_blank" rel="noopener" title="Apple Music"><img src="../images/itunes.png" alt="Apple Music"></a>
+                <a href="https://open.spotify.com/album/7vbRXRZjBaFZHhxzicrio2" target="_blank" rel="noopener" title="Spotify"><img src="../images/spotify.png" alt="Spotify"></a>
+                <a href="https://music.youtube.com/playlist?list=OLAK5uy_nzJ5J1vmqc4EnRW-qCRx5YOsFp9mQd6Vc" target="_blank" rel="noopener" title="YouTube Music"><img src="../images/youtube-music.png" alt="YouTube Music"></a>
+                <a href="https://www.deezer.com/fr/album/60096292" target="_blank" rel="noopener" title="Deezer"><img src="../images/deezer.png" alt="Deezer"></a>
+                <a href="https://nuitarie.bandcamp.com/album/arcaibh-the-lost-island" target="_blank" rel="noopener" title="Bandcamp"><img src="../images/bandcamp.png" alt="Bandcamp"></a>
+                <a href="https://www.amazon.fr/Arcaibh-Lost-Island-Nuitarie/dp/B07BSRR1M2" target="_blank" rel="noopener" title="Amazon Music"><img src="../images/amazon.png" alt="Amazon Music"></a>
+              </div>
+            </div>
+
           </div>
-          <div class="col-md-4">
-            <h4>Suivez-moi</h4>
+        </div>
+      </section>
+
+      <!-- SoundCloud -->
+      <section class="section-block bg-dark">
+        <div class="content-container">
+          <div class="section-header">
+            <span class="section-eyebrow">SoundCloud</span>
+            <h2>
+              <span class="fr-text">Collections</span>
+              <span class="en-text">Collections</span>
+            </h2>
+          </div>
+          <div class="soundcloud-grid soundcloud-grid-3">
+            <div class="soundcloud-card">
+              <h3>Crown of Thorns</h3>
+              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/929180185&color=%23C9A55A&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+            <div class="soundcloud-card">
+              <h3>Covers</h3>
+              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/576955974&color=%23C9A55A&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+            <div class="soundcloud-card">
+              <h3>
+                <span class="fr-text">Dernières créations</span>
+                <span class="en-text">Latest tracks</span>
+              </h3>
+              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nuitarie&color=%23C9A55A&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+          </div>
+          <div class="section-cta">
+            <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" class="btn-ghost">
+              <span class="fr-text">Tout le SoundCloud →</span>
+              <span class="en-text">Full SoundCloud →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos -->
+      <section class="section-block bg-surface">
+        <div class="content-container">
+          <div class="section-header">
+            <span class="section-eyebrow">
+              <span class="fr-text">Vidéos</span>
+              <span class="en-text">Videos</span>
+            </span>
+            <h2>
+              <span class="fr-text">Clips &amp; Performances</span>
+              <span class="en-text">Clips &amp; Performances</span>
+            </h2>
+          </div>
+
+          <div class="featured-video">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/MidhKqrWSqc?rel=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                title="Nuitarie - Pompeii (Bastille Cover)"></iframe>
+            </div>
+            <p class="video-caption">
+              <span class="fr-text">"Pompeii" — Reprise du titre de Bastille, réinterprété avec la sensibilité vocale unique de Nuitarie</span>
+              <span class="en-text">"Pompeii" — Bastille cover, reinterpreted with Nuitarie's unique vocal sensibility</span>
+            </p>
+          </div>
+
+          <div class="videos-grid">
+            <div class="video-item">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/8-jeecoXGds?rel=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  title="Jenny Of Oldstones"></iframe>
+              </div>
+              <p class="video-caption">
+                <span class="fr-text">"Jenny Of Oldstones" — Game of Thrones, harpe celtique</span>
+                <span class="en-text">"Jenny Of Oldstones" — Game of Thrones, celtic harp</span>
+              </p>
+            </div>
+            <div class="video-item">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/WJJx7d6R7pM?rel=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  title="Shéhérazade"></iframe>
+              </div>
+              <p class="video-caption">
+                <span class="fr-text">"Shéhérazade" — Composition originale</span>
+                <span class="en-text">"Shéhérazade" — Original composition</span>
+              </p>
+            </div>
+            <div class="video-item">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/zpY64xyAiek?rel=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  title="Sweet Relief"></iframe>
+              </div>
+              <p class="video-caption">
+                <span class="fr-text">"Sweet Relief" — Reprise Madison Beer</span>
+                <span class="en-text">"Sweet Relief" — Madison Beer cover</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" class="btn-ghost">
+              <span class="fr-text">Ma chaîne YouTube →</span>
+              <span class="en-text">My YouTube channel →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /tab-creative -->
+
+
+    <!-- ========================================================
+         CONTACT (shared)
+    ======================================================== -->
+    <section id="contact" class="section-block bg-dark contact-section">
+      <div class="content-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Contact</span>
+          <h2>
+            <span class="fr-text">Parlons ensemble</span>
+            <span class="en-text">Let's talk</span>
+          </h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <img src="../images/photo.jpg" alt="Nuitarie" class="contact-photo">
+            <div class="contact-details">
+              <p><a href="mailto:contact@nuitarie.eu">contact@nuitarie.eu</a></p>
+              <div class="contact-social">
+                <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Facebook"><img src="../images/facebook.png" alt="Facebook"></a>
+                <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram"></a>
+                <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="SoundCloud"><img src="../images/soundcloud.png" alt="SoundCloud"></a>
+                <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="YouTube"><img src="../images/youtube.png" alt="YouTube"></a>
+              </div>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#cv-modal" class="cv-link">
+                <span class="fr-text">Voir mon CV</span>
+                <span class="en-text">View my CV</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap">
+            <form method="post" action="https://formspree.io/contact@nuitarie.eu">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nom">
+                    <span class="fr-text">Nom</span><span class="en-text">Name</span>
+                  </label>
+                  <input type="text" id="nom" name="Nom" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="E-mail" placeholder="votre@email.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telephone">
+                    <span class="fr-text">Téléphone</span><span class="en-text">Phone</span>
+                  </label>
+                  <input type="tel" id="telephone" name="Téléphone" placeholder="+33 6 …">
+                </div>
+                <div class="form-group">
+                  <label for="objet">
+                    <span class="fr-text">Objet</span><span class="en-text">Subject</span>
+                  </label>
+                  <input type="text" id="objet" name="Objet" placeholder="Cours, atelier, projet…">
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" rows="5" placeholder="Votre message…"></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn-primary">
+                  <span class="fr-text">Envoyer</span>
+                  <span class="en-text">Send</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================
+         FOOTER
+    ======================================================== -->
+    <footer class="site-footer">
+      <div class="content-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">NUITARIE</div>
+            <p>
+              <span class="fr-text">Professeure de chant · Cheffe de chœur · Compositrice</span>
+              <span class="en-text">Singing Teacher · Choir Director · Composer</span>
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <span class="fr-text">Navigation</span>
+              <span class="en-text">Navigation</span>
+            </h4>
+            <ul>
+              <li>
+                <button onclick="showTab('teaching')" class="footer-link">
+                  <span class="fr-text">Enseignement</span><span class="en-text">Teaching</span>
+                </button>
+              </li>
+              <li>
+                <button onclick="showTab('creative')" class="footer-link">
+                  <span class="fr-text">Création</span><span class="en-text">Creative Work</span>
+                </button>
+              </li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+              <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#cv-modal">CV</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <span class="fr-text">Suivez-moi</span>
+              <span class="en-text">Follow me</span>
+            </h4>
             <div class="footer-social">
-              <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Facebook">
-                <img alt="Facebook" src="images/facebook.png" width="32" height="32">
-              </a>
-              <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="SoundCloud">
-                <img alt="SoundCloud" src="images/soundcloud.png" width="32" height="32">
-              </a>
-              <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="YouTube">
-                <img alt="YouTube" src="images/youtube.png" width="32" height="32">
-              </a>
-              <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Instagram">
-                <img alt="Instagram" src="images/instagram.png" width="32" height="32">
-              </a>
+              <a href="http://www.facebook.com/nuitarie" target="_blank" rel="noopener" aria-label="Facebook"><img src="../images/facebook.png" alt="Facebook"></a>
+              <a href="https://instagram.com/nuitarie" target="_blank" rel="noopener" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram"></a>
+              <a href="https://soundcloud.com/nuitarie" target="_blank" rel="noopener" aria-label="SoundCloud"><img src="../images/soundcloud.png" alt="SoundCloud"></a>
+              <a href="https://youtube.com/user/miracleworkerking" target="_blank" rel="noopener" aria-label="YouTube"><img src="../images/youtube.png" alt="YouTube"></a>
             </div>
+            <p style="margin-top:1.25rem"><a href="mailto:contact@nuitarie.eu" style="color:var(--text-muted);text-decoration:none">contact@nuitarie.eu</a></p>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Nuitarie. Tous droits réservés.</p>
+          <p>&copy; 2026 Nuitarie. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
-    <!-- Modal -->
-    <div class="container">
-      <div class="modal fade" id="cv-modal" tabindex="-1" role="dialog" aria-labelledby="cvModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="cvModalLabel"></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <h3>CV</h3>
-              <div class="container">
-                <iframe src="cv.pdf" width="100%" height="480" frameborder="1"></iframe>
-              </div>
-            </div>
+
+
+    <!-- ========================================================
+         CV MODAL
+    ======================================================== -->
+    <div class="modal fade" id="cv-modal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content cv-modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cvModalLabel">CV — Nuitarie</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe src="../cv.pdf" width="100%" height="520" frameborder="0" title="CV Nuitarie"></iframe>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="modal fade" id="cours-modal" tabindex="-1" role="dialog" aria-labelledby="coursModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="coursModalLabel"></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <h3>
-                Cours de chant
-                <br>
-                Technique et coaching vocal en musiques actuelles
-              </h3>
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-8 nopadding"><img src="images/modal4.jpg"></div>
-                  <div class="col-md-4 nopadding">
-                    <div class="short-div nopadding"><img src="images/modal2.jpg"></div>
-                    <div class="short-div nopadding"><img src="images/modal3.jpg"></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 nopadding"><img src="images/modal1.jpg"></div>
-                  <div class="col-md-8 padding30">
-                    <h5>Épanouissez votre chant !</h5>
-                    <p>
-                    Je vous propose des cours de chant et de technique vocale, où je
-                    privilégie la motivation et le plaisir, donc la pratique de chansons
-                    choisies par les élèves ou que je propose pour fournir un support
-                    actuel et dynamique. À partir de ce terreau adapté à chacun, on
-                    construit ensemble une pratique rigoureuse et permettant de
-                    s’épanouir et de se développer.<br>
-                    Diplômée d’un Master des Métiers de l’Enseignement, j’ai suivi les
-                    cours du Studio des Variétés à Paris. Je préside le groupe vocal
-                    <a href="http://negitachi.fr" target="_blank">Negitachi</a>, chœur de
-                    référence pour le répertoire geek en région parisienne. J’interviens
-                    également dans <a href="http://www.ecoledemusiqueallegria.eu/" target="_blank">
-                    l’école de musique Allegria</a> (Pascale Tachot) à
-                    Neuilly-sur-Seine.
-                    </p>
-                    <p>
-                    Tarif : 50€ de l’heure (CESU accepté).<br>
-                    Les cours peuvent également être collectifs (jusqu’à 3 élèves), et les
-                    tarifs s’adaptent. Des forfaits sont également possibles.<br>
-                    Contactez-moi pour en savoir plus !<br>
-                    <a href="mailto:contact@nuitarie.eu">contact@nuitarie.eu</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+    <!-- ========================================================
+         SCRIPTS
+    ======================================================== -->
     <script>
-      function switchLanguage(lang) {
-        // Update all flags to reflect current selection
-        document.querySelectorAll('.flag-icon.clickable').forEach(flag => {
-          if (flag.getAttribute('data-lang') === lang) {
-            flag.classList.add('active');
-          } else {
-            flag.classList.remove('active');
-          }
+      // ---- Tab switching ----
+      function showTab(tabId) {
+        document.querySelectorAll('.tab-btn').forEach(function(btn) {
+          btn.classList.toggle('active', btn.dataset.tab === tabId);
         });
-        // Get current active content
-        const currentContent = document.querySelector('.language-content.active');
-        const targetContent = document.getElementById(lang === 'fr' ? 'french-content' : 'english-content');
-        if (currentContent && currentContent !== targetContent) {
-          // Fade out current text content
-          currentContent.style.opacity = '0';
-          setTimeout(() => {
-            // Switch content
-            currentContent.classList.remove('active');
-            targetContent.classList.add('active');
-            // Fade in new text content
-            setTimeout(() => {
-              targetContent.style.opacity = '1';
-            }, 50);
-          }, 150);
-        } else if (!currentContent) {
-          // First load
-          targetContent.classList.add('active');
-        }
+        document.querySelectorAll('.tab-panel').forEach(function(panel) {
+          panel.classList.toggle('active', panel.id === 'tab-' + tabId);
+        });
+        // Instant jump — bypass CSS scroll-behavior: smooth by setting scrollTop directly
+        var html = document.documentElement;
+        html.style.scrollBehavior = 'auto';
+        document.body.style.scrollBehavior = 'auto';
+        html.scrollTop = 0;
+        document.body.scrollTop = 0;
+        // Double RAF: restore smooth scroll only after two frames have settled
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            html.style.scrollBehavior = '';
+            document.body.style.scrollBehavior = '';
+          });
+        });
+        // Lazy-load iframes that were deferred until tab became visible
+        document.querySelectorAll('#tab-' + tabId + ' iframe[data-src]').forEach(function(el) {
+          el.src = el.getAttribute('data-src');
+          el.removeAttribute('data-src');
+        });
       }
-      // Hamburger menu functions
-      function toggleMenu() {
-        const nav = document.getElementById('nav-menu');
-        const hamburger = document.querySelector('.hamburger');
-        nav.classList.toggle('active');
-        hamburger.classList.toggle('active');
+
+      // ---- Language switching ----
+      function switchLang(lang) {
+        // Update all lang buttons (header + mobile)
+        ['btn-fr','mobile-btn-fr'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.classList.toggle('active', lang === 'fr');
+        });
+        ['btn-en','mobile-btn-en'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.classList.toggle('active', lang === 'en');
+        });
+
+        document.querySelectorAll('.fr-text').forEach(function(el) {
+          el.style.display = (lang === 'fr') ? 'inline' : 'none';
+        });
+        document.querySelectorAll('.en-text').forEach(function(el) {
+          el.style.display = (lang === 'en') ? 'inline' : 'none';
+        });
       }
-      function closeMenu() {
-        const nav = document.getElementById('nav-menu');
-        const hamburger = document.querySelector('.hamburger');
-        nav.classList.remove('active');
-        hamburger.classList.remove('active');
+
+      // ---- Mobile menu ----
+      function toggleMobileMenu() {
+        var menu = document.getElementById('mobile-menu');
+        var btn  = document.getElementById('hamburger-btn');
+        var open = menu.classList.toggle('open');
+        btn.classList.toggle('open', open);
       }
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        const nav = document.getElementById('nav-menu');
-        const hamburger = document.querySelector('.hamburger');
-        if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
-          closeMenu();
-        }
+      function closeMobileMenu() {
+        document.getElementById('mobile-menu').classList.remove('open');
+        document.getElementById('hamburger-btn').classList.remove('open');
+      }
+      document.addEventListener('click', function(e) {
+        var menu = document.getElementById('mobile-menu');
+        var btn  = document.getElementById('hamburger-btn');
+        if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobileMenu();
       });
-      // Close menu on escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          closeMenu();
-        }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMobileMenu();
+      });
+
+      // ---- Header scroll effect ----
+      window.addEventListener('scroll', function() {
+        document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 40);
+      });
+
+      // ---- Hero video fade-in ----
+      var heroVideo = document.getElementById('hero-video');
+      if (heroVideo) {
+        heroVideo.addEventListener('canplay', function() {
+          heroVideo.classList.add('loaded');
+        });
+        // Fallback: if already ready (cached)
+        if (heroVideo.readyState >= 3) heroVideo.classList.add('loaded');
+      }
+
+      // ---- Init: hide all .en-text on load ----
+      document.querySelectorAll('.en-text').forEach(function(el) {
+        el.style.display = 'none';
       });
     </script>
+
   </body>
 </html>
